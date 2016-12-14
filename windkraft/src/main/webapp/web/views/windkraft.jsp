@@ -18,7 +18,7 @@
 			</c:forEach>
 			<c:forEach items="${herstellerliste}" var="produzent">
 					<li><a href="windkraft?id=${hersteller.hersteller_id}">${hersteller.hersteller}</a></li>
-				</c:forEach>
+			</c:forEach>
 			
 			
 		</ul>

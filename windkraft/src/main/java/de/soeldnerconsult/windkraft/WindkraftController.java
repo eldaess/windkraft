@@ -27,12 +27,8 @@ public class WindkraftController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/herstellerliste", method=RequestMethod.GET)
-	public ModelAndView herstellerliste(@RequestParam(value="hesteller_id") Integer hersteller_id, @RequestParam(value="hersteller") String hersteller, ModelAndView modelAndView) {
-		
-		modelAndView.addObject("hersteller", hersteller);
-		return modelAndView;
-	}
+	
+	
 	
 	/*@RequestMapping("/windkraft")
 	public String windkraft(Model model) {
@@ -47,13 +43,7 @@ public class WindkraftController {
 		
 	
 		
-		Hersteller avacon = new Hersteller();
-		Hersteller enercon = new Hersteller();
-		avacon.setHersteller("Avacon");
-		avacon.setHersteller_id(1);
-		enercon.setHersteller("Enercon");
-		enercon.setHersteller_id(2);
-		
+	
 		
 		List<Hersteller> hL = new ArrayList<Hersteller>();
 		hL.add(enercon); hL.add(enercon);
@@ -63,12 +53,25 @@ public class WindkraftController {
 	}*/
 	
 	@RequestMapping("windkraft")
-	public String windkraft (@RequestParam long id, Model model) {
+	public String windkraft (/*@RequestParam long id, */Model model) {
 
-		System.out.println(id);
-		//return back to index.jsp
 		
-		//model.addAttribute("prod", hersteller_id);
+		/*Hersteller phantasticon = new Hersteller();
+		phantasticon.setHersteller_id(1);
+		phantasticon.setHersteller("phantasticon");	
+		
+		Hersteller windicon = new Hersteller();
+		windicon.setHersteller_id(2);
+		windicon.setHersteller("windicon");
+		
+		List<Hersteller> hlist1 = new ArrayList<>();
+		hlist1.add(phantasticon); hlist1.add(windicon);
+		
+		//model.addAttribute("herstellerliste", hlist);
+		for(int x=0; x<hlist1.size(); x++) {
+			model.addAttribute("id", hlist1.get(x).getHersteller_id());
+			model.addAttribute("hersteller", hlist1.get(x).getHersteller());
+		}*/
 		
 
 		return "windkraft";
@@ -91,10 +94,33 @@ public class WindkraftController {
 	}*/
 	
 	
-	@RequestMapping("/hersteller")
-	public String hersteller() {
-		System.out.println("/hersteller aufgerufen");
-		return "hersteller";
+	
+	
+	
+	@RequestMapping("/windkraftlist")
+	public String windkraftlist(Model model) {
+		model.addAttribute("herstellerliste", getAllHersteller());
+		return "windkraftlist";
+	}
+	
+	@RequestMapping("/windkraftdetails")
+	public String windkraftdetails(@RequestParam("id") int id, Model model) {
+		
+		model.addAttribute("hersteller_id", getAllHersteller().get(id).getHersteller_id());
+		model.addAttribute("hersteller_id", getAllHersteller().get(id).getHersteller());
+		return "windkraftdetails";
+	}
+	
+		
+	public List<Hersteller> getAllHersteller() {
+		
+		Hersteller avacon = new Hersteller(0, "Enercon");
+		Hersteller enercon = new Hersteller(1, "Avacon");
+		
+		List<Hersteller> hlist = new ArrayList<>();
+		hlist.add(enercon); hlist.add(avacon);
+		return hlist;
+		
 	}
 	
 }

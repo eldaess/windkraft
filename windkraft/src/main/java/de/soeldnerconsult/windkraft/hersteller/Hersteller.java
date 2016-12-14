@@ -39,6 +39,8 @@ public class Hersteller {
 	public Integer getHersteller_id() {
 		return hersteller_id;
 	}
+	
+	
 
 	public void setHersteller_id(int hersteller_id) {
 		this.hersteller_id = hersteller_id;
@@ -54,6 +56,10 @@ public class Hersteller {
 	public String getHersteller() {
 		return hersteller;
 	}
+	public Integer getHersteller_id(long id) {
+		return hersteller_id;
+	}
+	
 
 	public void setHersteller(String hersteller) {
 		this.hersteller = hersteller;
@@ -65,5 +71,11 @@ public class Hersteller {
 		return hlist;
 	}*/
 	
+	public Hersteller() {}
+	
+	public Hersteller(Integer hersteller_id, String hersteller) {
+		this.hersteller_id=hersteller_id;
+		this.hersteller=hersteller;
+	}
 	
 }

@@ -39,10 +39,15 @@ public class WindkraftService {
 		//Windkraft und Standort Testdatensätze einfügen
 		
 		//Hersteller
-		Hersteller enercon = new Hersteller();
+		/*Hersteller enercon = new Hersteller();
 		enercon.setHersteller_id(1);
 		enercon.setHersteller("Enercon");	
-		herstellerRepository.save(enercon);
+		herstellerRepository.save(enercon);*/
+		
+		/*Hersteller avacon = new Hersteller();
+		enercon.setHersteller_id(2);
+		enercon.setHersteller("Avacon");	
+		herstellerRepository.save(avacon);*/
 		
 		
 		//Standort
@@ -57,7 +62,7 @@ public class WindkraftService {
 
 		Set<Standort> standortSet = new HashSet<>();
 		standortSet.add(grossviehberg);		
-		enercon.setStandort(standortSet);
+		//enercon.setStandort(standortSet);
 		
 		standortRepository.save(grossviehberg);
 			
@@ -68,6 +73,9 @@ public class WindkraftService {
 		hlist = herstellerRepository.findAll();
 		for (Hersteller h : hlist){
 		System.out.println(h.getHersteller());}*/
+		
+		
+		
 		}
 		
 		
@@ -78,12 +86,6 @@ public class WindkraftService {
 		
 	
 	
-	 public List<Hersteller> getAllHersteller() {
-		 
-		 List<Hersteller> hlist = hlist = herstellerRepository.findAll();
-	        
-	    	return hlist;
-	    }
-	
+
 	
 }
