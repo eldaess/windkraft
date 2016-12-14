@@ -22,7 +22,7 @@
 
 <ul>
 				<c:forEach items="${herstellerliste}" var="hersteller">
-					<li>${hersteller.hersteller_id}, ${hersteller.hersteller}</li>
+					<li><a href="windkraftdetails?id=${hersteller.hersteller_id}">${hersteller.hersteller}</a></li>
 				</c:forEach>
 </ul>
 

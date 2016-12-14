@@ -27,6 +27,14 @@ public class WindkraftController {
 		return "index";
 	}
 
+	@RequestMapping("/windkraftdetails")
+	public String windkraftdetails(@RequestParam("id") int id, Model model) {
+		model.addAttribute("hersteller_id", getAllHersteller().get(id).getHersteller_id());
+		model.addAttribute("hersteller", getAllHersteller().get(id).getHersteller());
+		return "windkraftdetails";
+	}
+	
+	
 	
 	
 	
@@ -37,6 +45,10 @@ public class WindkraftController {
 		return "windkraftlist";
 
 	}
+	
+	
+	
+	
 	public List<Hersteller> getAllHersteller() {
 		
 		Hersteller avacon = new Hersteller(1, "Avacon");

@@ -56,6 +56,10 @@ public class Hersteller {
 	public String getHersteller() {
 		return hersteller;
 	}
+	public Integer getHersteller_id(long id) {
+		return hersteller_id;
+	}
+	
 
 	public void setHersteller(String hersteller) {
 		this.hersteller = hersteller;

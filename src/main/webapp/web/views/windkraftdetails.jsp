@@ -11,5 +11,12 @@
 	<link rel="stylesheet" href="<c:url value="resources/styles/bootstrap/3.3.5/css/bootstrap.min.css" />" />
     <link rel="stylesheet" href="<c:url value="resources/styles/bootstrap/3.3.5/css/bootstrap-theme.min.css" />" />
     <link rel="stylesheet" href="<c:url value="resources/styles/pivotal.css" />" />
-    	<title>Windkrafdetails</title>
+    	<title>Windkraftdetails</title>
 </head>
+<body>
+
+${hersteller.id}, ${hersteller.hersteller}
+
+
+</body>
+</html>
