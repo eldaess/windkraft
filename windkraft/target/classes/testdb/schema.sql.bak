@@ -1,0 +1,7 @@
+drop table STANDORT if exists;
+drop table HERSTELLER if exists;
+
+create table STANDORT (ID integer identity primary key, STANDORTNAME varchar(50), NLEISTUNG decimal(10,5) not null, BAUJAHR integer, HERSTELLER_ID integer);
+create table HERSTELLER (HERSTELLER_ID integer identity primary key, HERSTELLER varchar(20));
+
+alter table STANDORT add constraint FK_STANDORT foreign key (HERSTELLER_ID) references HERSTELLER(HERSTELLER_ID) on delete cascade;

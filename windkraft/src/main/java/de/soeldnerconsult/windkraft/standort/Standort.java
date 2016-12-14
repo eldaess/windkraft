@@ -3,23 +3,27 @@ package de.soeldnerconsult.windkraft.standort;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import de.soeldnerconsult.windkraft.hersteller.Hersteller;
 
 @Entity
 @Table(name="STANDORT")
 public class Standort {
 
 	@Id
-	@Column(name="id")
-	private long entityId;
+	@Column(name="ID")
+	private Integer id;
 	
-	@Column(name="NAME")
-	private String name;
+	@Column(name="STANDORT")
+	private String standort;
 
 	@Column(name="NLEISTUNG")
 	private double nleistung;
@@ -27,24 +31,23 @@ public class Standort {
 	@Column(name="BAUJAHR")
 	private int baujahr;
 	
-	@Column(name="HERSTELLERID")
-	private int hersteller_id;
+	
 	
 
-	public long getEntityId() {
-		return entityId;
+	public int getId() {
+		return id;
 	}
 
-	public void setEntityId(int entityId) {
-		this.entityId = entityId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getStandort() {
+		return standort;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStandort(String standort) {
+		this.standort = standort;
 	}
 
 	public double getNleistung() {
@@ -63,13 +66,9 @@ public class Standort {
 		this.baujahr = baujahr;
 	}
 
-	public int getHersteller_id() {
-		return hersteller_id;
-	}
+	
 
-	public void setHersteller_id(int hersteller_id) {
-		this.hersteller_id = hersteller_id;
-	}
+	
 
 	public Standort() {
 	}
